@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout CSS Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #800080;
+            color: white;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        main {
+            display: flex;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        section {
+            flex: 2;
+            margin-right: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 10px;
+            color: black;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #kontak {
+            display: none; /* Sembunyikan elemen kontak secara default */
+        }
+
+        @media (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <script>
+        function toggleKontak() {
+            var kontak = document.getElementById("kontak");
+            if (kontak.style.display === "none" || kontak.style.display === "") {
+                kontak.style.display = "block"; // Tampilkan kontak
+            } else {
+                kontak.style.display = "none"; // Sembunyikan kontak
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>TAEKWONDO UMSIDA</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="tentang.html" target="_blank">Tentang</a></li>
+            <li><a href="#" onclick="toggleKontak()">Kontak</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Selamat Datang di Taekwondo UMSIDA!</h2>
+            <p>Kami adalah komunitas Taekwondo yang berdedikasi untuk mengajarkan seni bela diri dan membangun karakter. Bergabunglah bersama kami untuk belajar, berlatih, dan berkembang!</p>
+            
+            <h3>Informasi Terbaru</h3>
+            <p>Kegiatan latihan rutin diadakan setiap Selasa, Sabtu, dan Minggu pukul 15.00 - 18.00 di Lab Kedokteran UMSIDA.</p>
+            
+            <h3>Testimoni Anggota</h3>
+            <blockquote>
+                <p>"Bergabung dengan Taekwondo UMSIDA telah mengubah hidup saya. Saya tidak hanya belajar bela diri, tetapi juga disiplin dan kerja sama."</p>
+                <footer>- Anzalna Ilmana Shofi</footer>
+            </blockquote>
+            
+            <h3>Galeri Kegiatan</h3>
+            <img src="E:/Pictures/WhatsApp-Image-2022-08-24-at-10.02.55.jpeg" alt="Kegiatan Taekwondo" style="max-width: 100%; height: auto;">
+        </section>
+        
+        <aside>
+            <h2>Kontak Kami</h2>
+            <button onclick="toggleKontak()">Tampilkan Kontak</button>
+            <div id="kontak">
+                <p>Email: <a href="mailto:killerpeter810@gmail.com">killerpeter810@gmail.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/6282139367215">Chat dengan kami</a></p>
+                
+                <h2>Ikuti Kami</h2>
+                <ul>
+                    <li><a href="https://www.instagram.com/taekwondo_umsida/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hak Cipta Dilindungi.</p>
+    </footer>
+</body>
+</html>
